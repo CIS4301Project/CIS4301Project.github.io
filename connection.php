@@ -6,8 +6,7 @@
         global $g_link;
         if( $g_link )
             return $g_link;
-        $g_link = mysql_connect( 'overtherainbow.cmd36kni6cfz.us-west-2.rds.amazonaws.com:3306', 'RainbowOverlord', '2007)nyxIr1s') or die('Could not connect to server.' );
-        mysql_select_db('OverTheRainbow', $g_link) or die('Could not select database.');
+        $g_link = mysqli_connect( $_SERVER['overtherainbow.cmd36kni6cfz.us-west-2.rds.amazonaws.com'], $_SERVER['RainbowOverlord'], $_SERVER['2007)nyxIr1s'], $_SERVER['overtherainbow'], $_SERVER['3306']);
         return $g_link;
     }
     
