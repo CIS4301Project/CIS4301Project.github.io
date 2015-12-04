@@ -6,7 +6,7 @@
 
 <?php include('connection.php')?>
 <?php
-$res = mysql_query("CREATE TABLE User( user_id INT NOT NULL, address VARCHAR(100), is_staff BOOLEAN, email VARCHAR(100), password VARCHAR(100), user_name VARCHAR(100), PRIMARY KEY(user_id)", GetMyConnection());
+$res = mysql_query("INSERT INTO User( user_id, address, is_staff , email , password , user_name) VALUES (1, 'Apple', 'False', 'alicemail', 'passw0rd','ALICE')", GetMyConnection());
 ?>
 </body>
 </HTML>
