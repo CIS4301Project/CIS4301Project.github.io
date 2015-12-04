@@ -7,6 +7,13 @@
 <?php include('connection.php')?>
 <?php
 $res = mysql_query("SELECT * FROM User", GetMyConnection());
+
+while($row = mysql_fetch_array($res)) {
+    $name = $row['user_name'];
+    try die(mysql_error());
 ?>
+   <td><?php echo $name;?></td>
+
+
 </body>
 </HTML>
