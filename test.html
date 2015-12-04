@@ -1,19 +1,32 @@
-<HTML>
-<head>
+#!/usr/local/bin/php
 
-</head>
+<html>
 <body>
+<p>Testing connection to mysql</p>
+<form name="form" action="test.php" method="get">
+</form>
 
-<?php include('connection.php')?>
 <?php
-$res = mysql_query("SELECT * FROM User", GetMyConnection());
+$dbconn = mysql_connect("mysql.cise.ufl.edu:3306","yy2","cypriJ6579");
 
-while($row = mysql_fetch_array($res)) {
-    $name = $row['user_name'];
-    try die(mysql_error());
+if(!$dbconn){
+	die('no' . mysql_error());
+}
+else{
+	echo 'connect';
+	}mysql_select_db('CIS4301Project');
+	$result = mysql_db_query('CIS4301Project', 'SELECT * FROM User');
+
+if (!result){
+	echo "An error \n";
+	exit;
+}
+
+$row=mysql_fetch_row($result);
+echo $row[0];
+mysql_close($dbconn);
+
 ?>
-   <td><?php echo $name;?></td>
-
 
 </body>
 </HTML>
