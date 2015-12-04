@@ -17,6 +17,7 @@ else{
 	}mysql_select_db('CIS4301Project');
 	$result = mysql_db_query('CIS4301Project', 'SELECT * FROM User');
 
+
 if (!result){
 	echo "An error \n";
 	exit;
@@ -24,9 +25,12 @@ if (!result){
 
 $row=mysql_fetch_row($result);
 echo $row[0];
+$name = $row['user_name'];
 mysql_close($dbconn);
 
 ?>
+
+<td><?php echo $name;?></td>
 
 </body>
 </HTML>
