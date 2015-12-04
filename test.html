@@ -5,6 +5,8 @@
 <body>
 
 <?php include('connection.php')?>
+<?php
 $res = mysql_query("CREATE TABLE User( user_id INT NOT NULL, address VARCHAR(100), is_staff BOOLEAN, email VARCHAR(100), password VARCHAR(100), user_name VARCHAR(100), PRIMARY KEY(user_id)", GetMyConnection());
+?>
 </body>
 </HTML>
